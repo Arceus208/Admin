@@ -13,9 +13,10 @@ export const InputField: React.FC<InputFieldProps> = ({ label, ...props }) => {
   const [field, meta] = useField(props);
   return (
     <>
-      <Text fontWeight={400}>{label}</Text>
+      <Text fontWeight="bold" my={3}>
+        {label}
+      </Text>
       <Input
-        variant={"flushed"}
         isInvalid={!!meta.error}
         {...props}
         {...field}

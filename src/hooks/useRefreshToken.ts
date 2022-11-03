@@ -3,11 +3,11 @@ import { useCallback } from "react";
 import { useAuthContext } from "../context/authContext";
 
 export const useReFreshToken = () => {
-  const { setTokenValue } = useAuthContext();
+  const { setToken } = useAuthContext();
 
   const refresh = useCallback(async () => {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_HOST}/refresh_token`,
+      `${process.env.REACT_APP_HOST}/refresh_token`,
       {
         method: "GET",
         credentials: "include",
@@ -19,8 +19,8 @@ export const useReFreshToken = () => {
     );
     const data = await response.json();
 
-    setTokenValue(data.accessToken);
-  }, [setTokenValue]);
+    setToken(data.accessToken);
+  }, [setToken]);
 
   return refresh;
 };

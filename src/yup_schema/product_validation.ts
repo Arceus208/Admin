@@ -9,9 +9,17 @@ export const productSchema = yup.object().shape({
     .positive("Price must be greater than 0")
     .required("Required"),
   description: yup.string(),
-  category: yup.string().oneOf(["cards", "accessory", "box"]),
+  category: yup
+    .string()
+    .oneOf(["card", "cards", "accessory"])
+    .required("Required"),
   quantity: yup
     .number()
     .positive("Quantity must be greater than 0")
+    .required("Required"),
+  discount: yup
+    .number()
+    .min(0, "Discount cannot be smaller than 0")
+    .max(99, "Discount cannot be greater than 99")
     .required("Required"),
 });

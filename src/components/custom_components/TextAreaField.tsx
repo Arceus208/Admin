@@ -13,8 +13,11 @@ export const TextAreaField: React.FC<TextAreaProps> = ({ label, ...props }) => {
   const [field, meta] = useField(props);
   return (
     <>
-      <Text fontWeight={400}>{label}</Text>
+      <Text fontWeight="bold" my={3}>
+        {label}
+      </Text>
       <Textarea
+        whiteSpace="pre-wrap"
         isInvalid={!!meta.error}
         {...props}
         {...field}

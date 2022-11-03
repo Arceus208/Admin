@@ -24,9 +24,10 @@ export const monsterCheckBox = [
   { value: "pendulum_monster", label: "Pendulum Monster" },
 ];
 
-export const boxCheckBox = [
-  { value: "special", label: "Special" },
-  { value: "normal", label: "Normal" },
+export const cardsCheckBox = [
+  { value: "special", label: "special box" },
+  { value: "structure_deck", label: "structure deck" },
+  { value: "booster_pack", label: "booster pack" },
 ];
 
 export const accessoryCheckBox = [

@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 interface WrapperProps {
   children: ReactNode;
@@ -7,9 +7,15 @@ interface WrapperProps {
 
 const Wrapper: React.FC<WrapperProps> = ({ children }) => {
   return (
-    <Box my={20} mx="auto" maxW={[250, 400, 700, 1000]}>
+    <Flex
+      p={[5, 10, 20, 20]}
+      flexDirection="column"
+      bgColor="white"
+      flexGrow={1}
+      align="center"
+    >
       {children}
-    </Box>
+    </Flex>
   );
 };
 

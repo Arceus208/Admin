@@ -6,7 +6,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 
 interface UploadFileProps {
   setField: any;
-  maxFiles: number;
+  maxFiles?: number;
   fieldName: string;
 }
 
@@ -89,10 +89,6 @@ export const UploadFile: React.FC<UploadFileProps> = ({
               position="relative"
               borderRadius={10}
               boxShadow="md"
-              _hover={{
-                transform: "translate(0px,-10px)",
-                borderTop: "2px solid lightgrey",
-              }}
             >
               <Box
                 position="absolute"
